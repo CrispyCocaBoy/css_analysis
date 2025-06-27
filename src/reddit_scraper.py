@@ -15,9 +15,9 @@ username = os.environ.get('username')
 password = os.environ.get('password')
 user_agent = os.environ.get('user_agent')
 
-subreddit = 'NewsSteady'
+subreddit = 'PublicFreakout'
 query = 'Parkland AND school AND shooting'
-limit = 1000  # Keep this low for testing
+limit = 1000  # Set max number of posts to retrieve
 comment_score_min = 5   # Score threshold
 output_csv = 'reddit_posts_with_comments.csv'
 
