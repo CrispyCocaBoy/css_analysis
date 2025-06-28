@@ -105,6 +105,9 @@ def get_all_comments(video_id):
             params["pageToken"] = next_page
     return comments
 
+def get_video_id(link):
+    return link.split("v=")[-1]
+
 
 def run():
     topic = "parkland school shooting"
