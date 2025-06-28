@@ -6,13 +6,13 @@ from tqdm import tqdm
 
 # --- Config ---
 CHECKPOINT_SIZE = 1000  # Save every 1000 rows
-EMOTIONS = ['joy', 'fear', 'surprise', 'sadness', 'disgust', 'anger']
+EMOTIONS = ['joy', 'trust', 'fear', 'surprise', 'sadness', 'disgust', 'anger', 'anticipation']
 MODEL_NAME = "valhalla/distilbart-mnli-12-1"
 
 # --- Setup ---
 classifier = pipeline("zero-shot-classification", model=MODEL_NAME)
 base_dir = os.path.dirname(os.path.abspath(__file__))
-input_path = os.path.join(base_dir, '..', 'results/aggregated/reddit_cleaned.csv')
+input_path = os.path.join(base_dir, '..', 'data/final_dataset.csv')
 output_dir = os.path.join(base_dir, '..', 'results/aggregated/emotions')
 os.makedirs(output_dir, exist_ok=True)
 
