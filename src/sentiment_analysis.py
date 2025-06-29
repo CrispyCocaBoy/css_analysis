@@ -5,7 +5,7 @@ import os
 from tqdm import tqdm
 
 # --- Config ---
-CHECKPOINT_SIZE = 1000  # Save every 1000 rows
+CHECKPOINT_SIZE = 10000 # Save every 10000 rows
 EMOTIONS = ['joy', 'trust', 'fear', 'surprise', 'sadness', 'disgust', 'anger', 'anticipation']
 MODEL_NAME = "valhalla/distilbart-mnli-12-1"
 
@@ -39,11 +39,11 @@ for i, row in tqdm(df.iterrows(), total=len(df), desc="Classifying"):
 
     # Checkpoint save every N rows
     if (i + 1) % CHECKPOINT_SIZE == 0:
-        checkpoint_path = os.path.join(output_dir, f'reddit_with_emotions_checkpoint_{i+1:05d}.csv')
+        checkpoint_path = os.path.join(output_dir, f'full_with_emotions_checkpoint_{i+1:05d}.csv')
         df.iloc[:i+1].to_csv(checkpoint_path, index=False, float_format='%.2f')
         print(f"💾 Saved checkpoint: {checkpoint_path}")
 
 # --- Final full save ---
-final_path = os.path.join(output_dir, 'reddit_with_emotions_final.csv')
+final_path = os.path.join(output_dir, 'full_with_emotions_final.csv')
 df.to_csv(final_path, index=False, float_format='%.2f')
 print(f"✅ All done. Final file saved to: {final_path}")
