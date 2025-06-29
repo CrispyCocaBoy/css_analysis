@@ -117,8 +117,8 @@ def run():
     # Salvataggio dettagli video in CSV
     video_df = pd.DataFrame(details)
     video_df.to_csv(os.path.join(youtube_dir,"video.csv"), index=False)
-    print(f"Salvati dettagli di {len(video_df)} video in 'video_details.csv'")
-
+    print(f"Salvati dettagli di {len(video_df)} video in 'video_details_x_viz.csv'")
+    """
     # Scarica tutti i commenti in un'unica lista
     all_comments = []
 
@@ -134,9 +134,9 @@ def run():
     # Salva tutto in un unico CSV
     if all_comments:
         df = pd.DataFrame(all_comments)
-        df.to_csv(os.path.join(youtube_dir,"comments_youtube.csv"), index=False)
+        df.to_csv(os.path.join(youtube_dir,"comments_youtube_x_viz.csv"), index=False)
         print(f"Salvati {len(df)} commenti totali in 'comments_youtube.csv'")
-
+"""
 
 if __name__ == "__main__":
     run()
