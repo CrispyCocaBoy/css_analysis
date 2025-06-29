@@ -10,6 +10,8 @@ theme_set(theme_bw())
 
 # 1. extract data of interest in the interval
 
+df <- read_csv("results/aggregated/emotions/full_with_emotions_final.csv")
+
 event <- as.Date("2018-02-21")
 lower <- event - 7
 upper <- event + 7
