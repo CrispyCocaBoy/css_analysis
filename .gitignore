@@ -2,6 +2,8 @@
 .DS_Store
 .venv
 .env
+.ipynb_checkpoints/
+comments_youtube.csv
 .Rproj.user
 *.Rproj
 .Rhistory
